@@ -14,11 +14,10 @@
 <canvas id="sketchStickFigureCanvas" width="400" height="400"></canvas>
 
 <script>
-    // Get the canvas element
+
     var canvas = document.getElementById("sketchStickFigureCanvas");
     var ctx = canvas.getContext("2d");
 
-    // Draw the stick figure with sketch-style
     function drawSketchStickFigure() {
         // Head
         ctx.beginPath();
@@ -56,12 +55,10 @@
         ctx.closePath();
     }
 
-    // Clear the canvas
     function clearCanvas() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Redraw sketch stick figure on load
     window.onload = function() {
         drawSketchStickFigure();
     };
