@@ -1,0 +1,10 @@
+.fade {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+button{
+  color:black;
+  background-color: powderblue;
+
+}
