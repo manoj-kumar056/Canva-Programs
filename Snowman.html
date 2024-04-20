@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Do you wanna build a snowman?</title>
+</head>
+<body style="background-color:#7FFFD4">
+
+
+<!-- create a canvas -->
+<canvas id="canvas"></canvas>
+
+</body>
+
+<script>
+
+// get the canvas
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+// set dimensions
+var width = window.innerWidth;
+var height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+
+function drawCircle(color, x, y, radius) {
+  ctx.strokeStyle = ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+}
+
+function drawTriangle(color, x, y, height) {
+  ctx.strokeStyle = ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x - height, y - height);
+  ctx.lineTo(x + height, y - height);
+  ctx.fill();
+}
+
+function drawRectangle(color, x, y, width, height) {
+  ctx.strokeStyle = ctx.fillStyle = color;
+  ctx.fillRect(x, y, width, height);
+}
+
+// draw body
+drawCircle("#fff", 200, 350, 100);
+drawCircle("#fff", 200, 200, 75);
+drawCircle("#fff", 200, 100, 50);
+
+// draw eyes
+drawCircle("#000", 220, 90, 5);
+drawCircle("#000", 180, 90, 5);
+
+// draw buttons
+drawCircle("#000", 200, 160, 3);
+drawCircle("#000", 200, 200, 3);
+drawCircle("#000", 200, 240, 3);
+
+// nose
+drawTriangle("#000", 200, 110, 7);
+
+// hat
+drawRectangle("#555454", 160, 45, 80, 10);
+drawRectangle("#555454", 170, 5, 60, 40);
+
+// arms
+drawRectangle("#44261c", 270, 200, 80, 5);
+drawRectangle("#44261c", 50, 200, 80, 5);
+
+</script>
+
+</html>
